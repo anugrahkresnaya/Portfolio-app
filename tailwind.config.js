@@ -6,6 +6,9 @@ module.exports = {
   ],
   theme: {
     extend: {},
+    container: {
+      margin: '1000px',
+    },
   },
   plugins: [],
 }
