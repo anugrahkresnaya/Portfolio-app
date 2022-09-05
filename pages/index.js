@@ -1,6 +1,6 @@
 import Navbar from "../components/navbar/Navbar";
 import useSWR from "swr";
-import { SiSpotify } from 'react-icons/si';
+import { SiGmail, SiInstagram, SiLinkedin, SiSpotify, SiTwitch } from 'react-icons/si';
 
 export default function Home() {
   const fetcher = (url) => fetch(url).then((r) => r.json());
@@ -74,6 +74,45 @@ export default function Home() {
             <SiSpotify size={20} color={'#1ED760'} />
           </div>
         </a>
+      </div>
+      <div className="container mx-auto my-16 w-6/12">
+        <h1 className="text-4xl my-6">On the internet</h1>
+        <ul className="text-lg">
+          <li className="flex items-center">
+            <SiGmail className="mr-4" />
+            anugrahkresnaya.ak@gmail.com
+          </li>
+          <li>
+            <a
+              className="flex items-center"
+              href="https://www.instagram.com/anugrah_kresnaya/"
+              target="_blank"
+            >
+              <SiInstagram className="mr-4" />
+              @anugrah_kresnaya
+            </a>
+          </li>
+          <li>
+            <a
+              className="flex items-center"
+              href="https://www.linkedin.com/in/anugrah-kresnaya-5628671ab/"
+              target="_blank"
+            >
+              <SiLinkedin className="mr-4" />
+              Anugrah Kresnaya
+            </a>
+          </li>
+          <li>
+            <a
+              className="flex items-center"
+              href="https://www.twitch.tv/kazecrowz"
+              target="_blank"
+            >
+              <SiTwitch className="mr-4" />
+              kazecrowz
+            </a>
+          </li>
+        </ul>
       </div>
     </>
   )
