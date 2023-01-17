@@ -3,17 +3,52 @@ import useSWR from "swr";
 import { SiGmail, SiInstagram, SiLinkedin, SiSpotify, SiTwitch } from 'react-icons/si';
 import { motion } from 'framer-motion';
 import Bio from "../components/bio/Bio";
+import TextSpan from "../components/text/TextSpan";
+import Portfolio from "../components/portfolio/Portfolio";
 
 export default function Home() {
   const fetcher = (url) => fetch(url).then((r) => r.json());
   const { data } = useSWR('/api/spotify', fetcher);
+  const greetings = "Hello,".split("")
+  const myName = "I'm Anugrah!".split("")
+
   return (
     <>
       <Navbar />
       <div className="container mx-auto w-6/12">
-        <h1 className="text-8xl">Hello,</h1>
+        <h1 className="text-8xl">{greetings.map((letter, index) => {
+          return (
+            <TextSpan key={index}>
+              {letter}
+            </TextSpan>
+          )
+        })}</h1>
         <h1 className="text-8xl">
-          I'm Anugrah!👋
+          {myName.map((letter, index) => {
+            return (
+              <TextSpan key={index}>
+                {letter === " " ? "\u00A0" : letter}
+              </TextSpan>
+            )
+          })}<motion.div
+            style={{
+              marginBottom: '-20px',
+              marginRight: '-45px',
+              paddingBottom: '20px',
+              paddingRight: '45px',
+              display: 'inline-block',
+            }}
+            animate={{ rotate: 20 }}
+            transition={{
+              repeatType: 'mirror',
+              repeat: Infinity,
+              from: 0,
+              duration: 0.5,
+              ease: 'easeInOut',
+              type: 'tween',
+            }}
+            className="text-8xl"
+          >👋</motion.div>
         </h1>
       </div>
       <div className="container mx-auto my-16 w-6/12 text-justify">
@@ -40,7 +75,12 @@ export default function Home() {
         </p>
       </div>
       <Bio />
-      <div className="container mx-auto w-6/12 my-16">
+      <Portfolio />
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ y: [-50, 0], opacity: 1 }}
+        className="container mx-auto w-6/12 my-16"
+      >
         <h1 className="text-4xl mb-6">Now Playing</h1>
         <p className="mb-4">You can see what I'm listening to right now:</p>
         <a
@@ -76,7 +116,7 @@ export default function Home() {
             <SiSpotify size={20} color={'#1ED760'} />
           </div>
         </a>
-      </div>
+      </motion.div>
       <div className="container mx-auto my-16 w-6/12">
         <h1 className="text-4xl my-6">On the internet</h1>
         <ul className="text-lg">
