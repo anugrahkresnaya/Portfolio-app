@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import Bio from "../components/bio/Bio";
 import TextSpan from "../components/text/TextSpan";
 import Portfolio from "../components/portfolio/Portfolio";
+import Image from "next/image";
 
 export default function Home() {
   const fetcher = (url) => fetch(url).then((r) => r.json());
@@ -59,8 +60,8 @@ export default function Home() {
           and currently on my last year.
         </p>
         <p className="text-lg mb-4">
-          I'm focusing my time to learn about Web Development, especially frontend using React & NextJS. But
-          right now, I'm also starting to learn backend using ExpressJS. I'm already interested to learn
+          I&apos;m focusing my time to learn about Web Development, especially frontend using React & NextJS. But
+          right now, I&apos;m also starting to learn backend using ExpressJS. I&apos;m already interested to learn
           Fullstack Web Development. And starting my journey to learn Fullstack on Binar Academy.
         </p>
         <p className="text-lg mb-4">
@@ -71,7 +72,7 @@ export default function Home() {
         </p>
         <p className="text-lg">
           Outside of tech thingy, I play a lot of video games and streaming on Twitch for fun. I like a
-          game that have a good story. but right now, I'm still grinding on Valorant.
+          game that have a good story. but right now, I&apos;m still grinding on Valorant.
         </p>
       </div>
       <Bio />
@@ -82,20 +83,20 @@ export default function Home() {
         className="container mx-auto w-6/12 my-16"
       >
         <h1 className="text-4xl mb-6">Now Playing</h1>
-        <p className="mb-4">You can see what I'm listening to right now:</p>
+        <p className="mb-4">You can see what I&apos;m listening to right now:</p>
         <a
           target='_blank'
-          rel='noopener noreferer'
+          rel='noopener noreferrer'
           href={
             data?.isPlaying
               ? data.songUrl
-              : 'https://open.spotify.com/user/erence21?si=yTsrZT5JSHOp7tn3ist7Ig'
+              : 'https://open.spotify.com/user/krdm9kqj9n9rlc8tklwgmg0e3'
           }
           className='relative flex items-center p-5 space-x-4 transition-shadow border rounded-md hover:shadow-md w-72'
         >
           <div className='w-16'>
             {data?.isPlaying ? (
-              <img
+              <Image
                 className='w-16 shadow-sm'
                 src={data?.albumImageUrl}
                 alt={data?.album}
@@ -117,7 +118,11 @@ export default function Home() {
           </div>
         </a>
       </motion.div>
-      <div className="container mx-auto my-16 w-6/12">
+      <motion.div 
+        initial={{opacity: 0}}
+        whileInView={{ y: [-50, 0], opacity: 1 }}
+        className="container mx-auto my-16 w-6/12"
+      >
         <h1 className="text-4xl my-6">On the internet</h1>
         <ul className="text-lg">
           <li className="flex items-center">
@@ -129,6 +134,7 @@ export default function Home() {
               className="flex items-center"
               href="https://www.instagram.com/anugrah_kresnaya/"
               target="_blank"
+              rel="noopener noreferrer"
             >
               <SiInstagram className="mr-4" />
               @anugrah_kresnaya
@@ -139,6 +145,7 @@ export default function Home() {
               className="flex items-center"
               href="https://www.linkedin.com/in/anugrah-kresnaya-5628671ab/"
               target="_blank"
+              rel="noopener noreferrer"
             >
               <SiLinkedin className="mr-4" />
               Anugrah Kresnaya
@@ -149,13 +156,14 @@ export default function Home() {
               className="flex items-center"
               href="https://www.twitch.tv/kazecrowz"
               target="_blank"
+              rel="noopener noreferrer"
             >
               <SiTwitch className="mr-4" />
               kazecrowz
             </a>
           </li>
         </ul>
-      </div>
+      </motion.div>
     </>
   )
 }
