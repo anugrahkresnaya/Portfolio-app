@@ -4,29 +4,28 @@ import Image from 'next/image.js'
 import { FiGithub, FiEye } from 'react-icons/fi'
 
 const Portfolio = () => {
-
   return (
-    <div className='container mx-auto w-6/12 mt-20'>
+    <div className="container mx-auto w-6/12 mt-20">
       <motion.div
-        initial={{opacity: 0}}
-        whileInView={{y: [-50, 0], opacity: 1}}
-        className='text-center'
+        initial={{ opacity: 0 }}
+        whileInView={{ y: [-50, 0], opacity: 1 }}
+        className="text-center"
       >
-        <span className='text-violet-900 font-extrabold'>My Work</span>
-        <h1 className='text-5xl mt-5'>Web Projects</h1>
+        <span className="text-violet-900 font-extrabold">My Work</span>
+        <h1 className="text-5xl mt-5 font-bold">Web Projects</h1>
       </motion.div>
-      <motion.div 
-        initial={{x: 0, opacity: 0}}
-        whileInView={{x: [-250, 0], opacity: 1}}
-        transition={{duration: 1}}
-        exit={{opacity: 0, y: -50}}
-        className='mt-20 flex flex-wrap justify-center gap-5'
+      <motion.div
+        initial={{ x: 0, opacity: 0 }}
+        whileInView={{ x: [-250, 0], opacity: 1 }}
+        transition={{ duration: 1 }}
+        exit={{ opacity: 0, y: -50 }}
+        className="mt-20 flex flex-wrap justify-center gap-5"
       >
-        {projectImages.map(item => {
+        {projectImages.map((item) => {
           return (
             <div
               key={item.id}
-              className='
+              className="
                 max-w-sm 
                 basis-96 
                 h-64 
@@ -35,19 +34,19 @@ const Portfolio = () => {
                 rounded-md
                 text-center
                 relative
-              '
+              "
             >
               <Image
-                src={item.img || item.logo} 
-                alt='project' 
-                className='mx-auto max-h-52 rounded-t-md'
+                src={item.img || item.logo}
+                alt="project"
+                className="mx-auto max-h-52 rounded-t-md"
               />
-              <motion.h1 className='mt-3 text-2xl'>{item.name}</motion.h1>
+              <motion.h1 className="mt-3 text-2xl">{item.name}</motion.h1>
               <motion.div
-                initial={{opacity: 0}}
-                whileHover={{opacity: [0, 1]}}
-                transition={{duration: 0.3, ease: 'easeInOut'}}
-                className='
+                initial={{ opacity: 0 }}
+                whileHover={{ opacity: [0, 1] }}
+                transition={{ duration: 0.3, ease: 'easeInOut' }}
+                className="
                   bg-violet-900
                   items-center
                   absolute
@@ -60,15 +59,15 @@ const Portfolio = () => {
                   rounded-md
                   justify-center
                   gap-6
-                '
+                "
               >
                 <motion.a
                   href={item.repo}
-                  target='_blank'
-                  whileInView={{scale: [0,1]}}
-                  whileHover={{scale: [1, 1.1]}}
-                  transition={{duration: 0.3}}
-                  className='
+                  target="_blank"
+                  whileInView={{ scale: [0, 1] }}
+                  whileHover={{ scale: [1, 1.1] }}
+                  transition={{ duration: 0.3 }}
+                  className="
                     rounded-full 
                     text-2xl 
                     w-10 
@@ -77,17 +76,17 @@ const Portfolio = () => {
                     flex
                     justify-center
                     bg-gray-800/25
-                  '
+                  "
                 >
                   <FiGithub />
                 </motion.a>
-                <motion.a 
+                <motion.a
                   href={item?.url}
-                  target='_blank'
-                  whileInView={{scale: [0,1]}}
-                  whileHover={{scale: [1, 1.1]}}
-                  transition={{duration: 0.3}}
-                  className='
+                  target="_blank"
+                  whileInView={{ scale: [0, 1] }}
+                  whileHover={{ scale: [1, 1.1] }}
+                  transition={{ duration: 0.3 }}
+                  className="
                     rounded-full 
                     text-2xl 
                     w-10 
@@ -96,7 +95,7 @@ const Portfolio = () => {
                     flex
                     justify-center
                     bg-gray-800/25
-                  '
+                  "
                 >
                   <FiEye />
                 </motion.a>

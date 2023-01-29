@@ -23,14 +23,14 @@ const TextSpan = ({ children }) => {
     <motion.span
       animate={controls}
       onMouseOver={() => {
-        if (!isPlaying)
-          rubberBand()
+        if (!isPlaying) rubberBand()
       }}
+      whileHover={{ color: '#4C1D95' }}
       onAnimationComplete={() => setIsPlaying(false)}
-      className='inline-block'
+      className="inline-block"
     >
       {children}
-    </motion.span >
+    </motion.span>
   )
 }
 
