@@ -2,6 +2,7 @@ import { SiGmail, SiInstagram, SiLinkedin, SiTwitch } from 'react-icons/si'
 import { FiSend } from 'react-icons/fi'
 import emailjs from 'emailjs-com'
 import Swal from 'sweetalert2'
+import { motion } from 'framer-motion'
 
 const serviceId = process.env.NEXT_PUBLIC_SERVICE_ID
 const templateID = process.env.NEXT_PUBLIC_TEMPLATE_ID
@@ -23,12 +24,21 @@ const Contact = () => {
 
   return (
     <div className="container mx-auto w-6/12 mt-20">
-      <div className="text-center">
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ y: [-50, 0], opacity: 1 }}
+        transition={{ duration: 1 }}
+        className="text-center"
+      >
         <span className="text-violet-900 font-extrabold">Get in Touch</span>
         <h1 className="text-5xl my-5 font-extrabold">Contact Me</h1>
-      </div>
-      <div className="flex justify-evenly bg-white rounded-md text-[#131212] mb-5">
-        <div>
+      </motion.div>
+      <div className="flex justify-evenly bg-white rounded-md text-[#131212] mb-5 overflow-hidden">
+        <motion.div
+          initial={{ x: 0, opacity: 0 }}
+          whileInView={{ x: [-150, 0], opacity: 1 }}
+          transition={{ duration: 1 }}
+        >
           <h1 className="text-4xl my-6 font-bold">On the Internet</h1>
           <ul className="text-lg mt-5">
             <li className="flex items-center">
@@ -69,8 +79,13 @@ const Contact = () => {
               </a>
             </li>
           </ul>
-        </div>
-        <div className="ml-5">
+        </motion.div>
+        <motion.div
+          initial={{ x: 0, opacity: 0 }}
+          whileInView={{ x: [150, 0], opacity: 1 }}
+          transition={{ duration: 1 }}
+          className="ml-5"
+        >
           <h1 className="my-6 text-4xl font-bold">Send Me a Message</h1>
           <form onSubmit={handleOnSubmit}>
             <div className="flex">
@@ -124,7 +139,7 @@ const Contact = () => {
                 py-2
               "
             />
-            <button
+            <motion.button
               type="submit"
               className="
                 bg-violet-900 
@@ -137,12 +152,13 @@ const Contact = () => {
                 justify-evenly 
                 items-center
               "
+              whileHover={{ scale: 1.1 }}
             >
               <FiSend className="mr-2" />
               Send
-            </button>
+            </motion.button>
           </form>
-        </div>
+        </motion.div>
       </div>
     </div>
   )
