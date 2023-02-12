@@ -11,6 +11,9 @@ module.exports = {
       fontFamily: {
         righteous: ['"Righteous"', 'cursive'],
       },
+      minHeight: {
+        150: '150px',
+      },
     },
   },
   plugins: [],
