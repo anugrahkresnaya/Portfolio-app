@@ -1,6 +1,6 @@
 import web1 from '../public/better-pamaantify.png'
 import web2 from '../public/e_flight.png'
-import logo1 from '../public/sun_quan_logo.png'
+import logo1 from '../public/oceanz.png'
 import logo2 from '../public/e_flight_logo_resize.png'
 
 export const projectImages = [
@@ -29,10 +29,10 @@ export const projectImages = [
   {
     id: 4,
     img: '',
-    name: 'Sun-Quan',
+    name: 'Oceanz',
     logo: logo1,
-    url: 'https://anugrahkresnaya.github.io/Sun-Quan/',
-    repo: 'https://github.com/anugrahkresnaya/Sun-Quan'
+    url: 'https://oceanz.vercel.app/',
+    repo: 'https://github.com/anugrahkresnaya/LMS-client'
   },
 ]
 
