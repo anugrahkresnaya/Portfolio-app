@@ -76,7 +76,7 @@ const Bio = () => {
   }
 
   return (
-    <div className="container mx-auto w-6/12 text-center mt-20">
+    <div className="container mx-auto w-6/12 text-center mt-32" id='skillsExp'>
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ y: [-50, 0], opacity: 1 }}
@@ -93,6 +93,7 @@ const Bio = () => {
             bg-white 
             active:bg-violet-900 
             text-black 
+            font-bold
             active:text-white
             py-2.5
             px-4
@@ -108,6 +109,7 @@ const Bio = () => {
             bg-white 
             active:bg-violet-900 
             text-black 
+            font-bold
             active:text-white
             py-2.5
             px-4
@@ -115,7 +117,7 @@ const Bio = () => {
             text-sm
           "
         >
-          Experience
+          Experiences
         </button>
       </div>
       {active === 0 && (

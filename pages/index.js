@@ -7,6 +7,7 @@ import TextSpan from "../components/text/TextSpan";
 import Portfolio from "../components/portfolio/Portfolio";
 import Image from "next/image";
 import Contact from "../components/contact/Contact";
+import SocialLinks from "../components/socialLinks/socialLinks";
 
 export default function Home() {
   const fetcher = (url) => fetch(url).then((r) => r.json());
@@ -17,7 +18,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <div className="container mx-auto w-6/12">
+      <div className="container mx-auto w-6/12 pt-40">
         <motion.h1
           initial={{ opacity: 0 }}
           whileInView={{ x: [-50, 0], opacity: 1 }}
@@ -62,12 +63,13 @@ export default function Home() {
           </motion.div>
         </motion.h1>
       </div>
+      <SocialLinks />
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1, y: [-50, 0] }}
         className="container mx-auto my-16 w-6/12 text-justify"
       >
-        <h1 className="text-4xl mb-6 font-bold">About Me</h1>
+        <h1 className="text-4xl mb-6 font-bold" id="about">About Me</h1>
         <p className="text-lg mb-4">
           My name is <strong>Anugrah Kresnaya</strong>, a Software Engineer from{" "}
           <strong>Bekasi, Indonesia</strong>, with a strong passion for frontend

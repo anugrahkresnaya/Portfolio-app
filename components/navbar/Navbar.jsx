@@ -2,19 +2,12 @@ import Link from 'next/link'
 
 const Navbar = () => {
   return (
-    <nav className="container mx-auto my-4 w-6/12 flex justify-between">
-      <div>
-        <h1 className="text-xl font-righteous">
-          <Link href="/">Anugrah K</Link>
-        </h1>
-      </div>
-      <ul className="flex">
-        <li className="mx-4">
-          <Link href="/">Projects</Link>
-        </li>
-        <li>
-          <Link href="/">Contact</Link>
-        </li>
+    <nav className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 bg-white/80 backdrop-blur-sm shadow-lg rounded-full px-8 py-3 w-fit">
+      <ul className="flex space-x-6 font-medium text-gray-700">
+        <li><Link href="#about" scroll={false} className="hover:text-violet-900 transition-colors duration-500">About</Link></li>
+        <li><Link href="#skillsExp" scroll={false} className="hover:text-violet-900 transition-colors duration-500">Skills & Experiences</Link></li>
+        <li><Link href="#projects" scroll={false} className="hover:text-violet-900 transition-colors duration-500">Projects</Link></li>
+        <li><Link href="#contact" scroll={false} className="hover:text-violet-900 transition-colors duration-500">Contact</Link></li>
       </ul>
     </nav>
   )
