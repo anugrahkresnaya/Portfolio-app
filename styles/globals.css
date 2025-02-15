@@ -11,6 +11,10 @@ body {
   line-height: 1.4;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   padding-top: 10px;
   padding-bottom: 10px;

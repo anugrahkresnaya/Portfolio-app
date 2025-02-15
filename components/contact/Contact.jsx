@@ -51,7 +51,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="container mx-auto w-6/12 mt-20">
+    <div className="container mx-auto w-6/12 mt-32" id="contact">
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ y: [-50, 0], opacity: 1 }}
