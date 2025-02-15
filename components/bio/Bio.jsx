@@ -84,7 +84,7 @@ const Bio = () => {
         className="mb-12"
       >
         <span className="text-violet-900 font-extrabold">What I expert</span>
-        <h1 className="text-5xl mt-5 font-bold">Skills and Experiences</h1>
+        <h1 className="text-3xl md:text-5xl mt-5 font-bold">Skills and Experiences</h1>
       </motion.div>
       <div className="flex gap-4 text-center justify-center">
         <button
@@ -131,17 +131,17 @@ const Bio = () => {
           }}
           className="mt-20"
         >
-          <div className="flex justify-center text-8xl">
+          <div className="flex flex-col items-center gap-10 md:flex-row md:gap-0 justify-center text-8xl">
             <SiHtml5 className="mx-5" />
             <SiCss3 className="mx-5" />
             <SiJavascript className="mx-5" />
           </div>
-          <div className="flex justify-center text-8xl mt-10">
+          <div className="flex flex-col items-center gap-10 md:flex-row md:gap-0 justify-center text-8xl mt-10">
             <SiReact className="mx-5" />
             <SiNodedotjs className="mx-5" />
             <SiSequelize className="mx-5" />
           </div>
-          <div className='flex justify-center text-8xl mt-10'>
+          <div className='flex flex-col items-center gap-10 md:flex-row md:gap-0 justify-center text-8xl mt-10'>
             <SiTypescript className='mx-5' />
           </div>
         </motion.div>
