@@ -7,6 +7,7 @@ import TextSpan from "../components/text/TextSpan";
 import Portfolio from "../components/portfolio/Portfolio";
 import Image from "next/image";
 import Contact from "../components/contact/Contact";
+import SocialLinks from "../components/socialLinks/socialLinks";
 
 export default function Home() {
   const fetcher = (url) => fetch(url).then((r) => r.json());
@@ -62,6 +63,7 @@ export default function Home() {
           </motion.div>
         </motion.h1>
       </div>
+      <SocialLinks />
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1, y: [-50, 0] }}
