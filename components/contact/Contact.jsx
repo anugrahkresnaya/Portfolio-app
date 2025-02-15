@@ -59,7 +59,7 @@ const Contact = () => {
         className="text-center"
       >
         <span className="text-violet-900 font-extrabold">Get in Touch</span>
-        <h1 className="text-5xl my-5 font-extrabold">Contact Me</h1>
+        <h1 className="text-3xl md:text-5xl my-5 font-extrabold">Contact Me</h1>
       </motion.div>
       <div className="flex justify-evenly flex-col md:flex-row bg-white rounded-md text-[#131212] mb-5 overflow-hidden">
         <motion.div

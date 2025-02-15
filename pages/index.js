@@ -22,7 +22,7 @@ export default function Home() {
         <motion.h1
           initial={{ opacity: 0 }}
           whileInView={{ x: [-50, 0], opacity: 1 }}
-          className="text-8xl font-righteous"
+          className="text-2xl md:text-8xl font-righteous"
         >
           {greetings.map((letter, index) => {
             return <TextSpan key={index}>{letter}</TextSpan>;
@@ -31,7 +31,7 @@ export default function Home() {
         <motion.h1
           initial={{ opacity: 0 }}
           whileInView={{ x: [-50, 0], opacity: 1 }}
-          className="text-8xl font-righteous"
+          className="text-2xl md:text-8xl font-righteous"
         >
           {myName.map((letter, index) => {
             return (
@@ -57,7 +57,7 @@ export default function Home() {
               ease: "easeInOut",
               type: "tween",
             }}
-            className="text-8xl"
+            className="text-5xl md:text-8xl"
           >
             👋
           </motion.div>
@@ -69,7 +69,7 @@ export default function Home() {
         whileInView={{ opacity: 1, y: [-50, 0] }}
         className="container mx-auto my-16 w-6/12 text-justify"
       >
-        <h1 className="text-4xl mb-6 font-bold" id="about">About Me</h1>
+        <h1 className="text-3xl md:text-5xl mb-6 font-bold" id="about">About Me</h1>
         <p className="text-lg mb-4">
           My name is <strong>Anugrah Kresnaya</strong>, a Software Engineer from{" "}
           <strong>Bekasi, Indonesia</strong>, with a strong passion for frontend
@@ -107,7 +107,7 @@ export default function Home() {
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ y: [-50, 0], opacity: 1 }}
-        className="container mx-auto w-6/12 my-16"
+        className="container mx-auto max-w-4xl my-16"
       >
         <h1 className="text-4xl mb-6 font-bold">Now Playing</h1>
         <p className="mb-4">

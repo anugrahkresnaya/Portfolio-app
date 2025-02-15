@@ -12,7 +12,7 @@ const Portfolio = () => {
         className="text-center"
       >
         <span className="text-violet-900 font-extrabold">My Work</span>
-        <h1 className="text-5xl mt-5 font-bold">Web Projects</h1>
+        <h1 className="text-3xl md:text-5xl mt-5 font-bold">Web Projects</h1>
       </motion.div>
       <motion.div
         initial={{ x: 0, opacity: 0 }}
