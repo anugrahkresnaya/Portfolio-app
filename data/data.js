@@ -1,5 +1,6 @@
 import web1 from '../public/better-pamaantify.png'
 import web2 from '../public/e_flight.png'
+import web3 from '../public/clothes-co.png'
 import logo1 from '../public/oceanz.png'
 import logo2 from '../public/e_flight_logo_resize.png'
 
@@ -34,5 +35,12 @@ export const projectImages = [
     url: 'https://oceanz.vercel.app/',
     repo: 'https://github.com/anugrahkresnaya/LMS-client'
   },
+  {
+    id: 5,
+    img: web3,
+    name: 'Clothes.co',
+    url: 'https://clothes-co.vercel.app/',
+    repo: 'https://github.com/anugrahkresnaya/clothes.co'
+  }
 ]
 
