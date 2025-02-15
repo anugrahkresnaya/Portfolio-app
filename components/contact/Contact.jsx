@@ -51,7 +51,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="container mx-auto w-6/12 mt-32" id="contact">
+    <div className="container mx-auto max-w-4xl mt-32" id="contact">
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ y: [-50, 0], opacity: 1 }}
@@ -61,14 +61,14 @@ const Contact = () => {
         <span className="text-violet-900 font-extrabold">Get in Touch</span>
         <h1 className="text-5xl my-5 font-extrabold">Contact Me</h1>
       </motion.div>
-      <div className="flex justify-evenly bg-white rounded-md text-[#131212] mb-5 overflow-hidden">
+      <div className="flex justify-evenly flex-col md:flex-row bg-white rounded-md text-[#131212] mb-5 overflow-hidden">
         <motion.div
           initial={{ x: 0, opacity: 0 }}
           whileInView={{ x: [-150, 0], opacity: 1 }}
           transition={{ duration: 1 }}
         >
-          <h1 className="text-4xl my-6 font-bold">On the Internet</h1>
-          <ul className="text-lg mt-5">
+          <h1 className="text-4xl my-6 font-bold mx-5 md:mx-0">On the Internet</h1>
+          <ul className="text-lg mt-5 mx-5 md:mx-0">
             <li className="flex items-center">
               <SiGmail className="mr-4" />
               anugrahkresnaya.ak@gmail.com
@@ -112,7 +112,7 @@ const Contact = () => {
           initial={{ x: 0, opacity: 0 }}
           whileInView={{ x: [150, 0], opacity: 1 }}
           transition={{ duration: 1 }}
-          className="ml-5"
+          className="mx-5"
         >
           <h1 className="my-6 text-4xl font-bold">Send Me a Message</h1>
           <form onSubmit={handleOnSubmit}>
@@ -122,7 +122,7 @@ const Contact = () => {
                 <input
                   type="text"
                   name="firstName"
-                  className="rounded-md bg-slate-50 px-3 py-2 border-violet-600 border"
+                  className="rounded-md bg-slate-50 px-3 py-2 border-violet-600 border w-full"
                 />
               </div>
               <div className="flex flex-col">
@@ -130,7 +130,7 @@ const Contact = () => {
                 <input
                   type="text"
                   name="lastName"
-                  className="rounded-md bg-slate-50 px-3 py-2 border-violet-600 border"
+                  className="rounded-md bg-slate-50 px-3 py-2 border-violet-600 border w-full"
                 />
               </div>
             </div>
@@ -140,7 +140,7 @@ const Contact = () => {
                 <input
                   type="text"
                   name="phoneNumber"
-                  className="rounded-md bg-slate-50 px-3 py-2 border-violet-600 border"
+                  className="rounded-md bg-slate-50 px-3 py-2 border-violet-600 border w-full"
                 />
               </div>
               <div className="flex flex-col">
@@ -148,7 +148,7 @@ const Contact = () => {
                 <input
                   type="email"
                   name="email"
-                  className="rounded-md bg-slate-50 px-3 py-2 border-violet-600 border"
+                  className="rounded-md bg-slate-50 px-3 py-2 border-violet-600 border w-full"
                 />
               </div>
             </div>
