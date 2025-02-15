@@ -7,6 +7,7 @@ import {
   SiCss3,
   SiNodedotjs,
   SiSequelize,
+  SiTypescript,
 } from 'react-icons/si'
 
 const Bio = () => {
@@ -83,7 +84,7 @@ const Bio = () => {
         className="mb-12"
       >
         <span className="text-violet-900 font-extrabold">What I expert</span>
-        <h1 className="text-5xl mt-5 font-bold">Skills and Experience</h1>
+        <h1 className="text-5xl mt-5 font-bold">Skills and Experiences</h1>
       </motion.div>
       <div className="flex gap-4 text-center justify-center">
         <button
@@ -138,6 +139,9 @@ const Bio = () => {
             <SiNodedotjs className="mx-5" />
             <SiSequelize className="mx-5" />
           </div>
+          <div className='flex justify-center text-8xl mt-10'>
+            <SiTypescript className='mx-5' />
+          </div>
         </motion.div>
       )}
       {active === 1 && (
@@ -158,7 +162,7 @@ const Bio = () => {
           >
             <h3 className="text-3xl">Started as University Student</h3>
             <p className="text-gray-500 text-lg">
-              Generasi GIGIH 2.0 by YABB & GoTo
+              Gunadarma University
             </p>
           </motion.div>
           <motion.p
@@ -215,6 +219,23 @@ const Bio = () => {
             <h3 className="text-3xl">Fullstack Web Student</h3>
             <p className="text-gray-500 text-lg">Binar Academy</p>
             <span className="text-gray-600">Kampus Merdeka MSIB</span>
+          </motion.div>
+          <motion.p
+            animate="start"
+            initial={{ opacity: 0 }}
+            variants={variantsWithDelay3}
+            className="col-span-2 mb-1 mt-5 text-2xl font-semibold"
+          >
+            Jan 2024 - Sep 2024
+          </motion.p>
+          <motion.div
+            animate="end"
+            initial={{ opacity: 0 }}
+            variants={variantsWithDelay3}
+            className="col-span-2 mt-5"
+          >
+            <h3 className="text-3xl">Software Development Engineer Intern</h3>
+            <p className="text-gray-500 text-lg">DANA Indonesia</p>
           </motion.div>
         </div>
       )}

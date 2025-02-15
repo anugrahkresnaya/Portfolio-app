@@ -79,7 +79,7 @@ export default function Home() {
         <p className="text-lg mb-4">
           Previously, I have developed <strong>Alipay mini programs</strong> in
           collaboration with partners, including{" "}
-          <strong>Pro Digital Sehat, and E-SBN</strong>. I built the{" "}
+          <strong>ProSehat Digital, and E-SBN</strong>. I built the{" "}
           <strong>DANA Investech</strong> page using{" "}
           <strong>Next.js and Tailwind CSS</strong>, ensuring a seamless and
           efficient user experience. My experience includes building{" "}
