@@ -1,26 +1,54 @@
-import { SiGmail, SiInstagram, SiLinkedin, SiTwitch } from 'react-icons/si'
-import { FiSend } from 'react-icons/fi'
-import emailjs from 'emailjs-com'
-import Swal from 'sweetalert2'
-import { motion } from 'framer-motion'
+import { SiGmail, SiInstagram, SiLinkedin, SiTwitch } from "react-icons/si";
+import { FiSend } from "react-icons/fi";
+import emailjs from "emailjs-com";
+import Swal from "sweetalert2";
+import { motion } from "framer-motion";
 
-const serviceId = process.env.NEXT_PUBLIC_SERVICE_ID
-const templateID = process.env.NEXT_PUBLIC_TEMPLATE_ID
-const publicKey = process.env.NEXT_PUBLIC_PUBLIC_KEY
+const serviceId = process.env.NEXT_PUBLIC_SERVICE_ID;
+const templateID = process.env.NEXT_PUBLIC_TEMPLATE_ID;
+const publicKey = process.env.NEXT_PUBLIC_PUBLIC_KEY;
 
 const Contact = () => {
   const handleOnSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
+
+    console.log('service id', serviceId)
+
+    const formData = new FormData(e.target);
+    const firstName = formData.get("firstName").trim();
+    const lastName = formData.get("lastName").trim();
+    const phoneNumber = formData.get("phoneNumber").trim();
+    const email = formData.get("email").trim();
+    const message = formData.get("message").trim();
+
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    const phonePattern = /^[0-9]{8,15}$/;
+
+    if(!firstName || !lastName || !phoneNumber || !email || !message) {
+      Swal.fire("Error", "Please fill in all required fields!", "error")
+      return
+    }
+
+    if(!emailPattern.test(email)) {
+      Swal.fire("Error", "Please enter a valid email address!", "error")
+      return
+    }
+
+    if(!phonePattern.test(phoneNumber)) {
+      Swal.fire("Error", "Please enter a valid phone number (8-15 digits)!", "error");
+      return;
+    }
+
     emailjs
       .sendForm(serviceId, templateID, e.target, publicKey)
       .then(() => {
-        Swal.fire('Success', 'message successfully sent', 'success')
+        Swal.fire("Success", "message successfully sent", "success");
+        e.target.reset();
       })
       .catch(() => {
-        Swal.fire('Error', 'failed to send', 'error')
-      })
-    e.target.reset()
-  }
+        Swal.fire("Error", "failed to send", "error");
+      });
+  };
 
   return (
     <div className="container mx-auto w-6/12 mt-20">
@@ -94,7 +122,7 @@ const Contact = () => {
                 <input
                   type="text"
                   name="firstName"
-                  className="rounded-md bg-slate-50 px-3 py-2"
+                  className="rounded-md bg-slate-50 px-3 py-2 border-violet-600 border"
                 />
               </div>
               <div className="flex flex-col">
@@ -102,7 +130,7 @@ const Contact = () => {
                 <input
                   type="text"
                   name="lastName"
-                  className="rounded-md bg-slate-50 px-3 py-2"
+                  className="rounded-md bg-slate-50 px-3 py-2 border-violet-600 border"
                 />
               </div>
             </div>
@@ -112,7 +140,7 @@ const Contact = () => {
                 <input
                   type="text"
                   name="phoneNumber"
-                  className="rounded-md bg-slate-50 px-3 py-2"
+                  className="rounded-md bg-slate-50 px-3 py-2 border-violet-600 border"
                 />
               </div>
               <div className="flex flex-col">
@@ -120,7 +148,7 @@ const Contact = () => {
                 <input
                   type="email"
                   name="email"
-                  className="rounded-md bg-slate-50 px-3 py-2"
+                  className="rounded-md bg-slate-50 px-3 py-2 border-violet-600 border"
                 />
               </div>
             </div>
@@ -137,6 +165,8 @@ const Contact = () => {
                 bg-slate-50
                 px-3
                 py-2
+                border-violet-600 
+                border
               "
             />
             <motion.button
@@ -161,7 +191,7 @@ const Contact = () => {
         </motion.div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Contact
+export default Contact;
